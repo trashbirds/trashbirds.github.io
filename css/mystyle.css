@@ -8,3 +8,9 @@ html {
     /* Here's the syntax for adding a background image: */
     /*background-image: url(" [link to image here] ");*/
 }
+
+
+a {
+    color: gold; 
+
+}
