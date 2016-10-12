@@ -1,1 +1,10 @@
+html {
+    background-color: #edeff0;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 15px;
+    margin-left: 20px;
 
+    /* Here's the syntax for adding a background image: */
+    /*background-image: url(" [link to image here] ");*/
+}
