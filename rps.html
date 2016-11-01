@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rock, paper, scissors</title>
+  </head>
+  <body>
+    
+    <!-- start body HTML content-->
+    
+    <h1>Rock, paper, scissors</h1>
+      
+    <!-- here's our user selection.  what if we add <img> tags instead of text? -->
+    <a href="#" onclick="doTurn('rock');">Choose rock</a><br>
+    <a href="#" onclick="doTurn('paper');">Choose paper</a><br>
+    <a href="#" onclick="doTurn('scissors');">Choose scissors</a>
+    
+    <p></p>
+
+    <!-- this div will hold our output string 
+         and display it to the user -->
+    <div id="output"></div>
+
+    <!--end body HTML content-->
+
+
+
+    <!-- begin JS code -->
+
+    <script>
+      /* TODO: 
+        -implement AI.
+        -move script to external file.
+        -add a match win conditional such as "first to 5 wins".
+        -improve user interface (UI--add graphics?)
+        
+        COMPLETED:
+        -user input, although we could add images.
+        -score increments.
+        -add output other than console.
+    */
+
+      // string variables to hold possible choices
+      // we'll use these later on
+      var choice1 = "rock";
+      var choice2 = "paper";
+      var choice3 = "scissors";
+
+      // number variables to hold the scores
+      var humanScore = 0;
+      var computerScore = 0;
+      
+      // string variables to hold the choices
+      var humanChoice = "";
+      var computerChoice = "";
+      
+      // variable to hold our output
+      var output = "";
+
+      // this function performs one round of rock, paper, scissors
+      function doTurn(humanChoice) {
+         
+         computerChoice = "paper"; // placeholder for our AI
+         
+         if (humanChoice === computerChoice) { // Draw
+            console.log("Draw!");
+         }
+         else if ((humanChoice === "rock" && computerChoice === "scissors") ||
+                  (humanChoice === "scissors" && computerChoice === "paper") ||
+                  (humanChoice === "paper" && computerChoice === "rock")) { 
+                  // Human won
+            console.log("You win!"); 
+            output = "You win!";
+            humanScore++; // same as: humanScore = humanScore + 1;
+                          // same as: humanScore += 1;
+         }
+         else { // Human lost--no need to check by process of elimination
+            console.log("You lose!");
+            output = "You lose!";
+            computerScore++;
+         }
+          
+          
+        if (humanScore >= 10) {
+            humanScore = 0;
+            computerScore = 0;
+            output += "<br> You Win!";
+        }
+        else if (computerScore ) {
+            
+        }
+         // Use the += operator to add more HTML to the "output" string
+         output += "<br>You chose " + humanChoice
+                 + "<br>Computer chose " + computerChoice
+                 + "<br>Human score: " + humanScore
+                 + "<br>Computer score: " + computerScore;
+         
+         // Write the output string to the div element with id "output"
+         document.getElementById("output").innerHTML = output;
+      }
+      
+    </script>
+    
+    <!-- end JS code -->
+    
+  </body>
+</html>
